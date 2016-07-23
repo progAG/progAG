@@ -48,7 +48,7 @@ private Main pl;
 						newX = p.getLocation().getBlockX();
 						newZ = p.getLocation().getBlockZ();
 						
-						if((newX - oldX > 10 || newX - oldX < -10) || (newZ - oldZ > 10 || newZ - oldZ < -10)) {
+						if((newX - oldX > 6 || newX - oldX < -6) || (newZ - oldZ > 6 || newZ - oldZ < -6)) {
 
 							pl.getReportManager().reportPlayerByConsole(ChatColor.RED + "Der Spieler "+p.getDisplayName()+" sprintet zu schnell!" + ChatColor.YELLOW + " [SpeedVerdacht]");
 							

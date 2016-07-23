@@ -41,7 +41,7 @@ public class AntiFly implements Listener {
 				
 				if(p.isFlying()) {
 					
-					pl.getReportManager().reportPlayerByConsole(ChatColor.RED + "Der Spieler "+p.getDisplayName()+" fliegt.");
+					pl.getReportManager().reportPlayerByConsole(ChatColor.RED + "Der Spieler "+p.getDisplayName()+" fliegt." + ChatColor.YELLOW + " [FlyHacking-Verdacht!");
 					
 				} else {
 					
