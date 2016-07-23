@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import de.mathisneunzig.progag.anticheat.AntiCheatListener;
 import de.mathisneunzig.progag.anticheat.AntiCheatManager;
 import de.mathisneunzig.progag.chestshop.ShopListener;
 import de.mathisneunzig.progag.chestshop.ShopManager;
@@ -19,6 +18,7 @@ import de.mathisneunzig.progag.politics.ElectionManager;
 import de.mathisneunzig.progag.politics.PoliticsManager;
 import de.mathisneunzig.progag.quests.QuestListener;
 import de.mathisneunzig.progag.quests.QuestManager;
+import de.mathisneunzig.progag.reports.ReportManager;
 import de.mathisneunzig.progag.transport.TicketListener;
 import de.mathisneunzig.progag.transport.TrainListener;
 import de.mathisneunzig.progag.utils.UUIDManager;
@@ -27,7 +27,7 @@ public class Main extends JavaPlugin {
 	
 	public PluginManager pm = Bukkit.getPluginManager();
 	
-	public AntiCheatManager anticheatmanager;
+	public AntiCheatManager anticheatmanager = new AntiCheatManager(this);
 	
 	public ShopManager shopManager;
 	
@@ -47,10 +47,13 @@ public class Main extends JavaPlugin {
 	
 	public UUIDManager uuidManager;
 	
+	public ReportManager reportManager;
+	
 	public void onEnable() {
 		
 		loadCommands();
 		loadListener();
+		anticheatmanager.loadCheats(pm);
 		
 	}
 	
@@ -70,7 +73,6 @@ public class Main extends JavaPlugin {
 	
 	public void loadListener() {
 		
-		pm.registerEvents(new AntiCheatListener(), this);
 		pm.registerEvents(new ShopListener(), this);
 		pm.registerEvents(new EconomyListener(), this);
 		pm.registerEvents(new GSListener(), this);
@@ -144,6 +146,12 @@ public class Main extends JavaPlugin {
 	public UUIDManager getUUIDManager() {
 		
 		return uuidManager;		
+	}
+	
+	public ReportManager getReportManager() {
+		
+		return reportManager;
+		
 	}
 	
 }
