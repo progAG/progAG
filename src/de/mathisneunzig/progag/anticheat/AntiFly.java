@@ -1,6 +1,7 @@
 package de.mathisneunzig.progag.anticheat;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,7 +9,6 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffectType;
 
 import de.mathisneunzig.progag.Main;
-import net.minecraft.server.v1_10_R1.Material;
 
 public class AntiFly implements Listener {
 	
@@ -49,7 +49,7 @@ public class AntiFly implements Listener {
 
 						public void run() {
 							
-							if(p.getLocation().subtract(0, 2, 0).getBlock() == Material.AIR) {
+							if(p.getLocation().subtract(0, 2, 0).getBlock().getType() == Material.AIR) {
 								
 								count++;
 								
@@ -81,15 +81,7 @@ public class AntiFly implements Listener {
 				
 			}
 			
-			
 		}
-		
-		
-		
-		
-			
-				//if Player getKnockback from Enemie
-		
 		
 	}
 	
