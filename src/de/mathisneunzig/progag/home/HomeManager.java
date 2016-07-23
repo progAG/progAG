@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
+import de.mathisneunzig.progag.Main;
+
 public class HomeManager {
 	
 	private Main pl;
