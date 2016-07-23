@@ -1,26 +1,41 @@
 package de.mathisneunzig.progag.home;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
 public class HomeManager {
 	
-	public Home createHome(String name) {
+	private Main pl;
+	
+	public File file;
+	public YamlConfiguration homes;
+	
+	public HomeManager(Main pl) {
 		
-		return null;
+		this.pl = pl;
 		
 	}
 	
-	public void removeHome(String name) {
+	public void createHome(Player p, String name) {
+		
+		new Home(p, name, pl);
+		saveHomes();
+		
+	}
+	
+	public void removeHome(Player p, String name) {
 		
 		
 		
 	}
 	
-	public Home getHome(String name) {
+	public Home getHome(Player p, String name) {
 		
-		return null;
+		return new Home(p, name, pl);
 		
 	}
 	
@@ -30,21 +45,25 @@ public class HomeManager {
 		
 	}
 	
-	public int getHomeCount() {
+	public int getHomeCount(Player p) {
 		
 		return 0;
 		
 	}
 	
-	public int getMaxHomeCount() {
+	public int getMaxHomeCount(Player p) {
 		
-		return 0;
+		return homes.getInt("");
 		
 	}
 	
 	public void saveHomes() {
 		
-		
+		try {
+			homes.save(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
