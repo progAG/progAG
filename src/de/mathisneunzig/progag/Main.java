@@ -21,6 +21,7 @@ import de.mathisneunzig.progag.quests.QuestManager;
 import de.mathisneunzig.progag.reports.ReportManager;
 import de.mathisneunzig.progag.transport.TicketListener;
 import de.mathisneunzig.progag.transport.TrainListener;
+import de.mathisneunzig.progag.utils.PingManager;
 import de.mathisneunzig.progag.utils.UUIDManager;
 
 public class Main extends JavaPlugin {
@@ -46,6 +47,7 @@ public class Main extends JavaPlugin {
 	public QuestManager questManager;
 	
 	public UUIDManager uuidManager;
+	public PingManager pingManager;
 	
 	public ReportManager reportManager;
 	
@@ -151,6 +153,12 @@ public class Main extends JavaPlugin {
 	public ReportManager getReportManager() {
 		
 		return reportManager;
+		
+	}
+	
+	public PingManager getPingManager() {
+		
+		return pingManager;
 		
 	}
 	

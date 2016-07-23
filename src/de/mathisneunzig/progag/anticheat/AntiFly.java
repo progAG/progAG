@@ -66,7 +66,7 @@ public class AntiFly implements Listener {
 								
 								if(oldY < newY) {
 
-									pl.getReportManager().reportPlayerByConsole(ChatColor.RED + "Der Spieler "+p.getDisplayName()+" fliegt.");
+									pl.getReportManager().reportPlayerByConsole(ChatColor.RED + "Der Spieler "+p.getDisplayName()+" fliegt." + "[Ping: "+pl.getPingManager().getPing(p)+" ms]");
 									count = 0;
 									
 								}
@@ -86,10 +86,10 @@ public class AntiFly implements Listener {
 		
 		
 		
-		// if Player y+5 from Block ->> do....
-			//if Player hasEffect Jumpboost -> do...
+		
+			
 				//if Player getKnockback from Enemie
-					//if Player !hasPermission fly  
+		
 		
 	}
 	
