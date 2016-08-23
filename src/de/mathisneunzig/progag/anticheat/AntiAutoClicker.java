@@ -44,6 +44,8 @@ public class AntiAutoClicker implements Listener {
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e) {
 		
+		final Player p = e.getPlayer();
+		
 		@SuppressWarnings("deprecation")
 		int click = pl.getServer().getScheduler().scheduleAsyncRepeatingTask(pl, new Runnable() {
 

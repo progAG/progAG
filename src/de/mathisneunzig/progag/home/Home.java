@@ -3,6 +3,7 @@ package de.mathisneunzig.progag.home;
 import java.io.File;
 import java.io.IOException;
 
+import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
@@ -41,7 +42,7 @@ public class Home {
 	
 	public Location getLocation() {
 		
-		Location loc;
+		Location loc = null;
 		
 		return loc;
 		
