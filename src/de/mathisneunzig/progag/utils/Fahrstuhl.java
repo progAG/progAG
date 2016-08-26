@@ -1,13 +1,17 @@
 package de.mathisneunzig.progag.utils;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
@@ -39,6 +43,14 @@ public class Fahrstuhl implements Listener, CommandExecutor {
 				Player p = Bukkit.getPlayer(args[1]);
 				p.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 15, 5));
 				startElevator();
+				
+			}
+			
+		} else if(cmd.getName().equalsIgnoreCase("elevator-config")) {
+			
+			if(args[0].equalsIgnoreCase("")) {
+				
+				
 				
 			}
 			
@@ -118,6 +130,22 @@ public class Fahrstuhl implements Listener, CommandExecutor {
 		}
 		
 		return false;
+		
+	}
+	
+	@EventHandler
+	public void onClick(PlayerInteractEvent e) {
+		
+		Player p = e.getPlayer();
+		if(e.getAction() == Action.RIGHT_CLICK_BLOCK && p.getInventory().getItemInHand().getType() == Material.WOOD_SPADE) {
+			
+			if(p.hasPermission("progag.elevator.configuration")) {
+				
+				Block b = e.getClickedBlock();
+				
+			}
+			
+		}
 		
 	}
 	
